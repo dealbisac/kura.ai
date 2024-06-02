@@ -17,7 +17,7 @@ const Layout = async ({ children }: Props) => {
       <div className="w-[600px] ld:w-full flex flex-col items-start p-6">
         <Image
           src="/images/logo.png"
-          alt="LOGO"
+          alt="Logo"
           sizes="100vw"
           style={{
             width: '20%',
