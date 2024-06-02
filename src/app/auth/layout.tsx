@@ -1,4 +1,5 @@
 import { currentUser } from '@clerk/nextjs'
+import Image from 'next/image'
 import { redirect } from 'next/navigation'
 import React from 'react'
 
@@ -12,7 +13,22 @@ const Layout = async ({children}: Props) => {
     if (user) redirect('/')
 
   return (
-    <div>Layout</div>
+    <div className='h-screen flex w-full justify-center'>
+      <div className='w-[600px] ld:w-full flex flex-col items-start p-6'>
+        <Image
+          src='/images/logo.png'
+          alt='Logo'
+          sizes='100 vw'
+          style={{
+            width: '20%',
+            height: 'auto',
+          }}
+          width={0}
+          height={0}
+        />
+        {children}
+      </div>
+    </div>
   )
 }
 
