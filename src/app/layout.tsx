@@ -6,7 +6,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Kura.ai - Intelligent AI Chatbot.",
+  title: "Kura AI - Intelligent AI Chatbot.",
   description: "Automated AI sales chatbot.",
 };
 
