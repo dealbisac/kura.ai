@@ -18,4 +18,31 @@ export const useSignUpForm = () => {
         },
         mode: 'onChange',
     })
+
+    // function to handle on OTP generation
+    const onGenerateOTP = async (
+        email: string,
+        password: string,
+        onNext: React.Dispatch<React.SetStateAction<number>>
+      ) => {
+        if (!isLoaded) return
+    
+        try {
+          await signUp.create({
+            emailAddress: email,
+            password: password,
+          })
+    
+          await signUp.prepareEmailAddressVerification({ strategy: 'email_code' })
+    
+          onNext((prev) => prev + 1)
+        } catch (error: any) {
+          toast({
+            title: 'Error',
+            description: error.errors[0].longMessage,
+          })
+        }
+      }
+
+
 }
