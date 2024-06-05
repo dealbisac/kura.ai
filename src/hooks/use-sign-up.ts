@@ -1,10 +1,12 @@
+'use client'
 import { useToast } from '@/components/ui/use-toast'
 import { UserRegistrationProps, UserRegistrationSchema } from '@/schemas/auth.schema'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { useClerk, useSignUp } from '@clerk/nextjs'
+import { useSignUp } from '@clerk/nextjs'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { onCompleteUserRegistration } from '@/actions/auth'
 
 export const useSignUpForm = () => {
     const { toast } = useToast()
@@ -14,7 +16,7 @@ export const useSignUpForm = () => {
     const methods = useForm<UserRegistrationProps>({
         resolver: zodResolver(UserRegistrationSchema),
         defaultValues: {
-            type: 'ownner',
+            type: 'owner',
         },
         mode: 'onChange',
     })
