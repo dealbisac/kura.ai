@@ -1,8 +1,15 @@
+'use client'
 import { useAuthContextHook } from '@/context/use-auth-context'
 import React, { useState } from 'react'
 import { useFormContext } from 'react-hook-form'
-import OTPForm from './otp-form'
 import TypeSelectionForm from './type-selection-form'
+import dynamic from 'next/dynamic'
+import { Spinner } from '@/components/spinner'
+
+const OTPForm = dynamic(() => import('./otp-form'), {
+    ssr: false,
+    loading: Spinner,
+  })
 
 type Props = {}
 
