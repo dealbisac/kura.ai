@@ -9,6 +9,9 @@ const raleway = Raleway({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Kura AI - Intelligent AI Chatbot.",
   description: "Automated AI sales chatbot.",
+  icons: {
+    icon: '/icons/favicon.svg'
+  } 
 };
 
 export default function RootLayout({
