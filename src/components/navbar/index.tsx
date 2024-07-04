@@ -24,6 +24,7 @@ function NavBar() {
         <li>Pricing</li>
         <li>News Room</li>
         <li>Features</li>
+        <li>Blogs</li>
         <li>Contact us</li>
       </ul>
       <Link
