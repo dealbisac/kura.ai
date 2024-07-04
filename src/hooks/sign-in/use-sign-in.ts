@@ -30,7 +30,7 @@ export const useSignInForm = () => {
           await setActive({ session: authenticated.createdSessionId })
           toast({
             title: 'Success',
-            description: 'Welcome back!',
+            description: 'Welcome Back!',
           })
           router.push('/dashboard')
         }
